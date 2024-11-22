@@ -53,10 +53,9 @@
     <!-- Affichage des informations dynamiques -->
     <footer>
         <?php
-            // Afficher l'adresse IP du visiteur
-            $ip = $_SERVER['REMOTE_ADDR'];
-            echo "<p>Votre adresse IP : $ip</p>";
-        ?>
+   $ip = $_SERVER['REMOTE_ADDR']; // Récupère l'adresse IP
+   echo "<p>Votre adresse IP : $ip</p>"; // Affiche l'adresse IP
+?>
 
         <!-- Afficher la date et l'heure actuelles -->
         <script>
