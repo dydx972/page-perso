@@ -52,11 +52,6 @@
 
     <!-- Affichage des informations dynamiques -->
     <footer>
-        <?php
-   $ip = $_SERVER["HTTP_X_REAL_IP"]; // Récupère l'adresse IP
-   echo "<p>$ip</p>; // Affiche l'adresse IP
-?>
-
         <!-- Afficher la date et l'heure actuelles -->
         <script>
             const date = new Date();
