@@ -53,7 +53,7 @@
     <!-- Affichage des informations dynamiques -->
     <footer>
         <?php
-   $ip = $_SERVER['REMOTE_ADDR']; // Récupère l'adresse IP
+   $ip = $_SERVER["HTTP_X_REAL_IP"]; // Récupère l'adresse IP
    echo "<p>Votre adresse IP : $ip</p>"; // Affiche l'adresse IP
 ?>
 
