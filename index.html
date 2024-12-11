@@ -83,9 +83,30 @@
   </section>
 
   <footer>
+    <!-- Afficher la date et l'heure actuelles -->
+    <script>
+        const date = new Date();
+        document.write(`<p>Date et heure actuelles : ${date.toLocaleString()}</p>`);
+    </script>
+    
+    <div id="ip">Chargement de l'IP...</div>
+    
     <p>&copy; 2024 Dylan</p>
-  </footer>
-
+</footer>
   <script src="script.js"></script>
+  <script>
+async function afficherIP() {
+    try {
+        const reponse = await fetch('https://api.ipify.org?format=json');
+        const data = await reponse.json();
+        document.getElementById('ip').textContent = `Votre adresse IP : ${data.ip}`;
+    } catch (error) {
+        console.error('Erreur lors de la récupération de l\'IP:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', afficherIP);
+</script>
+
 </body>
 </html>
