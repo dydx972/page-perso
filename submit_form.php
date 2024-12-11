@@ -1,24 +1,34 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $message = htmlspecialchars(trim($_POST['message']));
 
     // Valider les champs
     if (!empty($name) && !empty($email) && !empty($message)) {
+        // Valider l'email
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            // Configurer l'email
-            $to = "francisdylan390@gmail.com"; // Remplacez par votre adresse email
-            $subject = "Nouveau message depuis le formulaire de contact";
-            $body = "Nom : $name\nEmail : $email\nMessage :\n$message";
-            $headers = "From: $email";
+            // Vérifier l'injection potentielle
+            if (preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/", $email)) {
+                // Configurer l'email
+                $to = "francisdylan390@gmail.com"; // Remplacez par votre adresse email
+                $subject = "Nouveau message depuis le formulaire de contact";
+                $headers = "MIME-Version: 1.0\r\n";
+                $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+                $headers .= "From: noreply@votresite.com\r\n";
+                $headers .= "Reply-To: $email\r\n";
 
-            // Envoyer l'email
-            if (mail($to, $subject, $body, $headers)) {
-                echo "Merci pour votre message ! Je vous répondrai bientôt.";
+                $body = "Nom : $name\nEmail : $email\nMessage :\n$message";
+
+                // Envoyer l'email
+                if (mail($to, $subject, $body, $headers)) {
+                    echo "Merci pour votre message ! Je vous répondrai bientôt.";
+                } else {
+                    echo "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.";
+                }
             } else {
-                echo "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.";
+                echo "L'adresse email est invalide.";
             }
         } else {
             echo "L'adresse email est invalide.";
@@ -30,4 +40,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Méthode non autorisée.";
 }
 ?>
-

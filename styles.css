@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Fond noir */
+  color: #fff; /* Texte blanc pour contraste */
+}
+
+header {
+  background-color: #008CBA;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 600px;
+  overflow: hidden;
+  background-color: #000; /* S'assure que le fond est noir */
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%; /* Chaque diapositive prend exactement toute la largeur du conteneur */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.carousel-slide img {
+  display: block; /* Évite les marges automatiques des images */
+  width: 100%; /* S'assure que l'image occupe toute la diapositive */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Suppression des marges ou espacements inutiles */
+body, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none; /* Supprime les puces éventuelles */
+}.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 10; /* Ajout du z-index pour placer les boutons au-dessus */
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+footer {
+  background-color: #008CBA;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+/* Boutons interactifs */
+button {
+    background-color: #008CBA; /* Couleur principale du bouton */
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation au survol */
+    cursor: pointer; /* Curseur de clic */
+}
+/* Boutons de liens */
+.cv-button, .lettre-button {
+    background-color: #008CBA; /* Couleur principale des boutons */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation fluide */
+    cursor: pointer; /* Curseur de clic */
+}

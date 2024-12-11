@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Bienvenue sur mon Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>À propos de moi</h2>
+    <p>Je suis Dylan, étudiant en BTS CIEL option A, passionné par le développement web.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Mes Projets</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev">◀</button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <li class="carousel-slide">
+            <img src="project1.jpg" alt="Projet 1">
+            <p>Projet 1: Site web dynamique</p>
+          </li>
+          <li class="carousel-slide">
+            <img src="project2.jpg" alt="Projet 2">
+            <p>Projet 2: Application mobile</p>
+          </li>
+          <li class="carousel-slide">
+            <img src="project3.jpg" alt="Projet 3">
+            <p>Projet 3: Portfolio personnel</p>
+          </li>
+        </ul>
+      </div>
+      <button class="carousel-btn next">▶</button>
+    </div>
+  </section>
+<main>
+        <!-- Section CV -->
+        <section id="cv">
+            <h2>Mon CV</h2>
+            <a href="cv.pdf" target="_blank" class="cv-button">Télécharger mon CV</a>
+        </section>
+
+        <!-- Section Lettre de motivation -->
+        <section id="lettre">
+            <h2>Lettre de motivation</h2>
+            <a href="lettre de motivation.pdf" target="_blank" class="lettre-button">Télécharger ma lettre de motivation</a>
+        </section>
+
+        <!-- Section Formulaire de contact -->
+        <section id="contact">
+            <h2>Formulaire de Contact</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Nom :</label><br>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="message">Message :</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: dylan@example.com</p>
+    <p>Téléphone: 06 12 34 56 78</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Dylan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
