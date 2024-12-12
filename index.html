@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', afficherIP);
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    emailjs.sendForm('serservice_khsg1ma', 'template_dijb7dj', this)
+    emailjs.sendForm('service_khsg1ma', 'template_dijb7dj', this)
         .then(function() {
             alert('Message envoyé avec succès!');
             document.getElementById('contact-form').reset();
