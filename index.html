@@ -1,14 +1,21 @@
+<!-- Déclaration du type de document HTML5 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Définition de l'encodage des caractères -->
   <meta charset="UTF-8">
+  <!-- Configuration de la vue mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Titre de la page -->
   <title>Portfolio</title>
+  <!-- Liaison avec la feuille de style CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- En-tête du site -->
   <header>
     <h1>Bienvenue sur mon Portfolio</h1>
+    <!-- Navigation principale -->
     <nav>
       <ul>
         <li><a href="#about">À propos</a></li>
@@ -16,6 +23,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <!-- Intégration de la bibliothèque EmailJS -->
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
@@ -27,16 +35,20 @@
 
   </header>
 
+  <!-- Section À propos -->
   <section id="about">
     <h2>À propos de moi</h2>
     <p>Je suis Dylan, étudiant en BTS CIEL option A, passionné par le développement web.</p>
   </section>
-<!-- Section Carousel -->
+
+  <!-- Section Projets avec carousel -->
   <section id="projects">
     <h2>Mes Projets</h2>
     <div class="carousel">
+      <!-- Boutons de navigation du carousel -->
       <button class="carousel-btn prev">◀</button>
       <div class="carousel-track-container">
+        <!-- Liste des projets dans le carousel -->
         <ul class="carousel-track">
           <li class="carousel-slide">
             <img src="project1.jpg" alt="Projet 1">
@@ -55,20 +67,21 @@
       <button class="carousel-btn next">▶</button>
     </div>
   </section>
+
 <main>
-        <!-- Section CV -->
+        <!-- Section pour le CV -->
         <section id="cv">
             <h2>Mon CV</h2>
             <a href="cv.pdf" target="_blank" class="cv-button">Télécharger mon CV</a>
         </section>
 
-        <!-- Section Lettre de motivation -->
+        <!-- Section pour la lettre de motivation -->
         <section id="lettre">
             <h2>Lettre de motivation</h2>
             <a href="lettre de motivation.pdf" target="_blank" class="lettre-button">Télécharger ma lettre de motivation</a>
         </section>
 
-        <!-- Section Formulaire de contact -->
+        <!-- Formulaire de contact avec EmailJS -->
         <section id="contact">
     <h2>Formulaire de Contact</h2>
     <form id="contact-form">
@@ -86,25 +99,28 @@
 </section>
 
     </main>
+  <!-- Section des informations de contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: francisylan390@gmail.com</p>
     <p>Téléphone: 06 96 29 13 03</p>
   </section>
 
+  <!-- Pied de page -->
   <footer>
-    <!-- Afficher la date et l'heure actuelles -->
+    <!-- Script pour afficher la date et l'heure -->
     <script>
         const date = new Date();
         document.write(`<p>Date et heure actuelles : ${date.toLocaleString()}</p>`);
     </script>
-     <!-- Afficher l'adresse IP -->
+     <!-- Div pour afficher l'adresse IP -->
     <div id="ip">Chargement de l'IP...</div>
-    
     <p>&copy; 2024 Dylan</p>
 </footer>
+  <!-- Inclusion des scripts JavaScript -->
   <script src="script.js"></script>
   <script src="mail.js"></script>
+  <!-- Script pour récupérer et afficher l'IP -->
   <script>
 async function afficherIP() {
     try {
@@ -114,7 +130,12 @@ async function afficherIP() {
     } catch (error) {
         console.error('Erreur lors de la récupération de l\'IP:', error);
     }
+}
+
 document.addEventListener('DOMContentLoaded', afficherIP);
+
+  </script>
+<!-- Configuration et initialisation d'EmailJS -->
 <script type="text/javascript"
        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
@@ -123,6 +144,7 @@ document.addEventListener('DOMContentLoaded', afficherIP);
      emailjs.init("YQCWLLqNwhOOtD-bY");
   })();
 </script>
+<!-- Gestion de l'envoi du formulaire avec EmailJS -->
 <script>
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
